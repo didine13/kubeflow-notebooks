@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: kubeflow-centraldashboard-tls
+spec:
+  secretName: kubeflow-centraldashboard-tls
+  dnsNames:
+    - kubeflow-centraldashboard.k8s.demo
+  issuerRef:
+    name: ca-issuer
+    kind: ClusterIssuer
